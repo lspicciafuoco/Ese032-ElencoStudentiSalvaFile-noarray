@@ -1,19 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define MAX_STRLEN 30
+#define N 3
 
-// Definisci le costanti
+struct s_studente {
+    char nome[MAX_STRLEN];
+    char cognome[MAX_STRLEN];
+    int eta;
+    char classe[MAX_STRLEN];
+};
 
-// Definisci il tipo di dato struct s_studente
-
-// Definisci studente come struct s_studente
-
+struct s_studente studente;
 
 int main(int argc, char** argv) {
-    // Dichiara le variabili locali
     
-    // Codice per l'inserimento, da parte dell'utente, dei dati e del salvataggio
-    // nel file
+    int i;
+    
+    FILE *puntaFile;
+    puntaFile = fopen("elenco.dat", "wb");
+    
+    if(puntaFile != NULL) {
+        for(i = 0; i < N; i++) {
+            printf("Nome %d : ");
+            scanf("%s", studente.nome);
+            printf("Congome %d : ");
+            scanf("%s", studente.cognome);
+            printf("Eta' %d : ");
+            scanf("%d", &(studente.eta));
+            printf("Classe %d : ");
+            scanf("%s", studente.classe);
+            fwrite(&studente, sizeof(studente), 1, puntaFile);
+        }
+        
+        fclose(puntaFile);
+    }
     
     return (EXIT_SUCCESS);
 }
